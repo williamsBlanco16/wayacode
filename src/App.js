@@ -1,25 +1,65 @@
 import React from 'react';
-import logo from './logo.svg';
+import {
+  BrowserRouter,
+  Switch,
+  Route
+} from 'react-router-dom'
+import {
+  createMuiTheme,
+  MuiThemeProvider,
+  ThemeProvider
+} from '@material-ui/core/styles';
+
+import Header from './components/layouts/Header'
+import Footer from './components/layouts/footer/Footer'
+import Home from './components/home/Home'
+import About from './components/about/About';
+import Portfolio from './components/portfolio/Portfolio'
+import Contact from './components/contact/Contact';
+
 import './App.css';
+
+const theme = createMuiTheme({
+  palette: {
+    primary: {
+      main:'#3a8eB1'
+    },
+    secundary:{
+      main:'#3EB456'
+    }
+  },
+  typography: {
+    fontFamily: [
+      'Open Sans',
+       '-apple-system', 
+       'BlinkMacSystemFont', 
+      'Segoe UI', 
+      'Roboto', 
+      'Oxygen',
+      'Ubuntu', 
+      'Cantarell', 
+      'Fira Sans', 
+      'Droid Sans', 
+      'Helvetica Neue',
+      'sans-serif',
+    ].join(','),
+  },
+});
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={theme}>
+    <Header/>
+      <BrowserRouter>
+          <Switch>
+            <Route exact path={['/','/home']} component={Home}/>
+            <Route path='/about' component={About}/>
+            <Route path='/portfolio' component={Portfolio}/>
+            <Route path='/contact' component={Contact}/>
+          </Switch>
+        <Footer/>
+      </BrowserRouter>
+    </ThemeProvider>
   );
 }
 
