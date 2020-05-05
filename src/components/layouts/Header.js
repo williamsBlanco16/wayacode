@@ -27,15 +27,26 @@ const useStyles = makeStyles((theme) => ({
     width:'66%'
   },
   text:{
-    color: '#ffffff'
+    color: '#ffffff',
+    "&:hover":{ 
+      color:'#3a8eB1',
+      backgroundColor:'#ffffff'
+    }
   },
   link: {
     margin: theme.spacing(1, 1.5),
-    fontFamily: 'Rajdhani'
+    fontFamily: 'Rajdhani',
+    
   },
   toolbar: {
     flexWrap: 'wrap',
   },
+  sinHover:{
+    "&:hover":{ 
+      backgroundColor:'transparent'
+    }
+  
+  }
   
 }));
 
@@ -51,7 +62,7 @@ const Header = ()=> {
           <Toolbar className={classes.toolbar}>
             <Grid container>
               <Grid item  xs={6}>  
-                <Button>
+                <Button className={classes.sinHover}>
                   <img className={classes.img} src={logoBase} alt="logo"/>
                 </Button>
               </Grid>
