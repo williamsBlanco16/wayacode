@@ -6,16 +6,14 @@ import {
 } from 'react-router-dom'
 import {
   createMuiTheme,
-  MuiThemeProvider,
   ThemeProvider
 } from '@material-ui/core/styles';
 
-import Header from './components/layouts/Header'
-import Footer from './components/layouts/footer/Footer'
 import Home from './components/home/Home'
 import About from './components/about/About';
 import Portfolio from './components/portfolio/Portfolio'
 import Contact from './components/contact/Contact';
+import Test from './components/Test'
 
 import './App.css';
 
@@ -49,15 +47,14 @@ const theme = createMuiTheme({
 function App() {
   return (
     <ThemeProvider theme={theme}>
-    <Header/>
       <BrowserRouter>
           <Switch>
             <Route exact path={['/','/home']} component={Home}/>
-            <Route path='/about' component={About}/>
-            <Route path='/portfolio' component={Portfolio}/>
+            <Route path='/about/profile' component={About}/>
+            <Route path='/portafolio' component={Portfolio}/>
             <Route path='/contact' component={Contact}/>
+            <Route path='/test' component={Test}/>
           </Switch>
-        <Footer/>
       </BrowserRouter>
     </ThemeProvider>
   );

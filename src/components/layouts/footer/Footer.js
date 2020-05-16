@@ -1,18 +1,18 @@
 import React from 'react';
-import CssBaseline from '@material-ui/core/CssBaseline';
-import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
-import Link from '@material-ui/core/Link';
 import AppBar from '@material-ui/core/AppBar'
-import Button from '@material-ui/core/Button'
+import Box from '@material-ui/core/Box'
+import IconButton from '@material-ui/core/IconButton';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
-
+import GitHubIcon from '@material-ui/icons/GitHub';
 
 import Copyright from './Copyright'
 
+import {redes} from '../header/menuItem'
+
 const useStyles = makeStyles((theme) => ({
-  root: {
+  rootf: {
     display: 'flex',
     flexDirection: 'column',
     textAlign:'center',
@@ -24,11 +24,10 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: theme.spacing(2),
   },
   footer: {
-    padding: theme.spacing(3, 2),
     marginTop: 'auto',
     backgroundColor:'transparent'
     
-  },
+  },  
   AppBar:{
     top: 'auto',
     bottom: 0,
@@ -39,16 +38,29 @@ const Footer = () => {
   const classes = useStyles();
 
   return (
-    <div className={classes.root}>
+    <Box component = 'div' className={classes.rootf}>
        <AppBar elevation={0} color='transparent' position='fixed' className={classes.AppBar}>
-      <footer className={classes.footer}>
-        <Button>Linkedin<LinkedInIcon color='primary'/></Button>  
+      <Box component='footer' className={classes.footer}>
+        <IconButton 
+          component='a' 
+          href={redes.linkedin}
+          target="_blank"
+        >
+          <LinkedInIcon color='primary'/>
+        </IconButton> 
+        <IconButton 
+          component='a' 
+          href={redes.github}
+          target="_blank"
+        >
+          <GitHubIcon/> 
+        </IconButton>  
         <Container >
           <Copyright />
         </Container>
-      </footer>
+      </Box>
     </AppBar>
-    </div>
+    </Box>
    
   );
 }
