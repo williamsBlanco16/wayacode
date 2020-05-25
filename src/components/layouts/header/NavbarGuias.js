@@ -17,7 +17,7 @@ import {Link, withRouter } from 'react-router-dom'
 import logoBase from '../../../assets/img/logo-base.png'
 import {menuItems} from './menuItem'
 
-const NavbarDesktop = ({history})=> {
+const NavbarGuias = ({history})=> {
   const classes = useStyles();
   const optionWithSubMenu = {'About':null,'Portfolio':null}
 
@@ -39,13 +39,8 @@ const NavbarDesktop = ({history})=> {
   return (
     <>
       <Hidden smDown>
-        <Grid item  xs={6}> 
-          <Button className={classes.sinHover}>
-            <img className={classes.img} src={logoBase} alt="logo"/>
-          </Button>
-        </Grid>
-        <Grid item xs={6}>
-          <Grid container justify='flex-end'>
+        <Grid item xs={12}>
+          <Grid container justify='center'>
             {menuItems.map((items,key)=>{
               const subMenu = items.subMenu.length > 0;
               return(
@@ -72,7 +67,7 @@ const NavbarDesktop = ({history})=> {
   );
 }
 
-export default withRouter(NavbarDesktop);
+export default withRouter(NavbarGuias);
 
 const addSubmenu = (item,open,anchorEl,classes) =>{
   return(<Popper 

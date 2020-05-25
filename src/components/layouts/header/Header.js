@@ -15,10 +15,13 @@ const useStyles = makeStyles((theme) => ({
   },
   toolbar: {
     flexWrap: 'wrap',
-  }
+  },
+  appBar:{
+      background:'linear-gradient(to left, #3eb456 , #19546d)'
+    }
 }));
 
-const Header = ({history})=> {
+const Header = ({background=false,navBarGuias=false})=> {
   const classes = useStyles();
 
   return (
@@ -26,11 +29,13 @@ const Header = ({history})=> {
       <AppBar 
         color='transparent'
         elevation={0}
-        position='absolute'>
+        position='absolute'
+        className={background?classes.appBar:''}
+      >
         <Toolbar className={classes.toolbar}>
           <Grid container>
             {/*Responsive Desktop smDow*/}
-            <NavbarDesktop/>
+            {navBarGuias || <NavbarDesktop/>}
           </Grid>
           {/*mobile*/}
           <Hidden mdUp>

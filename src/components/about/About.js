@@ -71,6 +71,24 @@ const About = () =>{
                   target="_blank"  />))
               }
             </AvatarGroup>
+            <AvatarGroup style={{marginLeft:116}} max={3}>
+            
+              {aboutData.team.map((item,key)=>(
+                
+                  <Avatar key={key} alt={item.alt} src={item.foto} component='a' 
+                  href={item.linkedin}
+                  target="_blank"  />))
+              }
+            </AvatarGroup>
+            <AvatarGroup style={{marginLeft:116}} max={3}>
+            
+              {aboutData.team.map((item,key)=>(
+                
+                  <Avatar key={key} alt={item.alt} src={item.foto} component='a' 
+                  href={item.linkedin}
+                  target="_blank"  />))
+              }
+            </AvatarGroup>
           </Grid>
 
         </Grid>

@@ -16,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
   main: {
     paddingTop: '18%',
     [theme.breakpoints.down('sm')]:{
-      paddingTop: '40%',
+      paddingTop: '29vh',
     }
   },
   footer: {

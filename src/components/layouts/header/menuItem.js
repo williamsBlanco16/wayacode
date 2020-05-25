@@ -33,7 +33,7 @@ const menuItems = [
       {
         listIcon:<FolderOpen/>,
         listText:'Work Experience',
-        listPath:'/about/workExperience'
+        listPath:'/about/experience'
       },
       {
         listIcon:<FitnessCenter/>,
@@ -50,7 +50,7 @@ const menuItems = [
       {
         listIcon:<LocalLibrary/>,
         listText:'Guias',
-        listPath:'/guias'
+        listPath:'/portfolio/guias'
       },
       {
         listIcon:<ViewComfy/>,

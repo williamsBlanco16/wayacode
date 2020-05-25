@@ -3,6 +3,7 @@ import { Box } from '@material-ui/core';
 import {makeStyles} from '@material-ui/core/styles'
 import fondoHomeMD from '../../assets/img/fondo-home@2x.png'
 import fondoAbout from '../../assets/img/fondo-general.svg'
+import fondoExperience from '../../assets/img/back-image.svg'
 
 const Fondo = (props) => {
   const classes = useStyle();
@@ -36,5 +37,13 @@ const useStyle = makeStyles(theme=>({
   },
   about:{
     backgroundImage:`url(${fondoAbout})`,
+  },
+  experience:{
+    backgroundImage:`url(${fondoExperience})`
+  },
+  skills:{
+    backgroundImage:`url(${fondoHomeMD})`,
+    backgroundRepeat: 'unset',
   }
+
 }))
